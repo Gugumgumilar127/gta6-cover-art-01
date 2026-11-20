@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Palm Heat — Cover Studio</title>
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<header class="masthead">
+  <div class="brand">
+    <span class="brand-mark">PALM HEAT</span>
+    <span class="brand-sub">COVER STUDIO</span>
+  </div>
+  <p class="masthead-note">Your photos. Your cast. One sunset. Export a poster in three sizes — everything stays on your machine.</p>
+</header>
+<main class="studio">
+  <aside class="controls" id="controls">
+    <section class="control-group">
+      <h2>The words</h2>
+      <label>Title <input id="title-input" type="text" maxlength="24" value="PALM HEAT"></label>
+      <label>Subtitle <input id="subtitle-input" type="text" maxlength="34" value="one last summer"></label>
+      <label>Tagline <input id="tagline-input" type="text" maxlength="64" value="FIVE FRIENDS · ONE COAST · NO WAY BACK"></label>
+    </section>
+    <section class="control-group">
+      <h2>Layout &amp; size</h2>
+      <div class="button-row" id="layout-row" role="group" aria-label="Panel layout"></div>
+      <div class="button-row" id="size-row" role="group" aria-label="Export size"></div>
+    </section>
+    <section class="control-group">
+      <h2>Colour grade</h2>
+      <div class="button-row" id="grade-row" role="group" aria-label="Colour grade"></div>
+      <label>Grade strength <input id="grade-amount" type="range" min="0" max="100" value="85"></label>
+    </section>
+    <section class="control-group">
+      <h2>Photos</h2>
+      <label class="file-pick">Add your photos <input id="photo-input" type="file" accept="image/*" multiple></label>
+      <div class="photo-strip" id="photo-strip"></div>
+      <p class="hint">Pick a photo, then a panel — or drag on the poster to move the selected panel's photo, scroll to zoom it.</p>
+    </section>
+    <section class="control-group">
+      <h2>Panels</h2>
+      <div id="panel-list"></div>
+    </section>
+    <section class="control-group">
+      <button id="export-button" type="button">Export PNG</button>
+      <p id="status" role="status"></p>
+    </section>
+  </aside>
+  <section class="stage">
+    <canvas id="poster" width="1920" height="1080" aria-label="Your cover, live preview"></canvas>
+    <p class="stage-hint">Live preview — the poster is drawn exactly as it will export.</p>
+  </section>
+</main>
+<script type="module" src="./src/main.js"></script>
+</body>
+</html>
